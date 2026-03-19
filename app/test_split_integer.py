@@ -14,8 +14,8 @@ def test_difference_between_max_and_min_should_be_less_than_or_equal_to_one(
     value: int,
     num_parts: int
 ) -> None:
-    res = split_integer(value, num_parts)
-    assert max(res) - min(res) <= 1
+    assert max(split_integer(value, num_parts)) - min(
+        split_integer(value, num_parts)) <= 1
 
 
 @pytest.mark.parametrize(
@@ -73,8 +73,8 @@ def test_parts_should_be_sorted_when_they_are_not_equal(
     value: int,
     num_parts: int
 ) -> None:
-    result = split_integer(value, num_parts)
-    assert sorted(result) == result
+    assert sorted(split_integer(
+        value, num_parts)) == split_integer(value, num_parts)
 
 
 @pytest.mark.parametrize(
